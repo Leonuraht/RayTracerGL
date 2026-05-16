@@ -67,14 +67,16 @@ CMakeFiles/glad.dir/src/glad.c.o: /home/leonuraht/storage/CFiles/RayTracer/src/g
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h
+  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdarg.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stddef.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h
 
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stddef.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdarg.h:
 
 /usr/include/sys/types.h:
 
@@ -197,8 +199,6 @@ CMakeFiles/glad.dir/src/glad.c.o: /home/leonuraht/storage/CFiles/RayTracer/src/g
 /usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/endian.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
 
 /usr/include/bits/waitstatus.h:
 

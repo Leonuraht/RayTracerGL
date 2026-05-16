@@ -23,6 +23,7 @@ void checkshader(unsigned int i,int type) {
         glGetShaderInfoLog(i, 512, NULL, logdata);
         if(type == 0) printf("VERTEX SHADER COMPILATION FAILED : %s\n", logdata);
         else if(type == 1) printf("FRAGMENT SHADER COMPILATION FAILED : %s\n", logdata);
+        else if(type == 2) printf("COMPUTE SHADER COMPILATION FAILED : %s\n",logdata);
     }
 }
 
@@ -55,4 +56,19 @@ Shader::Shader(std::string vertexpath, std::string fragmentpath) {
     checkprogram(program);
     glDeleteShader(vertex);
     glDeleteShader(fragment);
+}
+
+
+Shader::Shader(std::string computepath) {
+    std::string computes = openfile(computepath);
+    const char *compute_source = computes.c_str();
+    compute = glCreateShader(GL_COMPUTE_SHADER);
+    glShaderSource(compute, 1, &compute_source, NULL);
+    glCompileShader(compute);
+    checkshader(compute,2);
+    program = glCreateProgram();
+    glAttachShader(program, compute);
+    glLinkProgram(program);
+    checkprogram(program);
+    glDeleteShader(compute);
 }
