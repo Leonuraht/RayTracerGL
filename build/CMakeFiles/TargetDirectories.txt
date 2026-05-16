@@ -1,0 +1,4 @@
+/home/leonuraht/storage/CFiles/RayTracer/build/CMakeFiles/glad.dir
+/home/leonuraht/storage/CFiles/RayTracer/build/CMakeFiles/app.dir
+/home/leonuraht/storage/CFiles/RayTracer/build/CMakeFiles/edit_cache.dir
+/home/leonuraht/storage/CFiles/RayTracer/build/CMakeFiles/rebuild_cache.dir
