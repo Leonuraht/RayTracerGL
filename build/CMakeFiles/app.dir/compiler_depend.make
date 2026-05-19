@@ -369,6 +369,7 @@ CMakeFiles/app.dir/src/camera.cpp.o: /home/leonuraht/storage/CFiles/RayTracer/sr
 CMakeFiles/app.dir/src/main.cpp.o: /home/leonuraht/storage/CFiles/RayTracer/src/main.cpp \
   /home/leonuraht/storage/CFiles/RayTracer/include/KHR/khrplatform.h \
   /home/leonuraht/storage/CFiles/RayTracer/include/Misc/camera.hpp \
+  /home/leonuraht/storage/CFiles/RayTracer/include/Misc/shader.hpp \
   /home/leonuraht/storage/CFiles/RayTracer/include/glad/glad.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
@@ -1171,8 +1172,6 @@ app: /usr/lib/Scrt1.o \
 
 /usr/include/c++/16.1.1/bits/fstream.tcc:
 
-/home/leonuraht/storage/CFiles/RayTracer/include/Misc/shader.hpp:
-
 /usr/include/time.h:
 
 /usr/include/linux/stddef.h:
@@ -1298,6 +1297,8 @@ app: /usr/lib/Scrt1.o \
 /usr/include/asm-generic/errno.h:
 
 /usr/include/GLFW/glfw3.h:
+
+/home/leonuraht/storage/CFiles/RayTracer/include/Misc/shader.hpp:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/syslimits.h:
 

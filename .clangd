@@ -1,2 +1,2 @@
 CompileFlags:
-  Add: [-Wno-unused-parameter]
+  Add: [-Wno-unused-parameter,-Wno-unused-variable]

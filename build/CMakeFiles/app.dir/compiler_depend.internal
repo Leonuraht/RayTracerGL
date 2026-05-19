@@ -371,6 +371,7 @@ CMakeFiles/app.dir/src/main.cpp.o
  /home/leonuraht/storage/CFiles/RayTracer/src/main.cpp
  /home/leonuraht/storage/CFiles/RayTracer/include/KHR/khrplatform.h
  /home/leonuraht/storage/CFiles/RayTracer/include/Misc/camera.hpp
+ /home/leonuraht/storage/CFiles/RayTracer/include/Misc/shader.hpp
  /home/leonuraht/storage/CFiles/RayTracer/include/glad/glad.h
  /usr/include/GLFW/glfw3.h
  /usr/include/alloca.h
