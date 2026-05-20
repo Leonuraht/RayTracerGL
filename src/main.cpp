@@ -24,7 +24,7 @@ std::vector<Object> object{
     Object(0.5f, glm::vec3(-0.2f, 0.2f, -1.f), glm::vec3(1.f, 0.4f, 0.5f)),
     Object(0.2f, glm::vec3(0.f, -0.5f, 2.f), glm::vec3(0.5f, 0.2f, 0.3f)),
     Object(0.8f, glm::vec3(-1.f, 0.f, -4.f), glm::vec3(0.6f, 0.7f, 0.4f)),
-    Object(  -8.f, glm::vec3(0.f, 1.f, 1.f), glm::vec3(0.5f, 0.5f, 0.1f))};
+    Object(-8.f, glm::vec3(0.f, 1.f, 1.f), glm::vec3(0.5f, 0.5f, 0.1f))};
 
 int main() {
   glfwSetErrorCallback(glfw_error_callback);
@@ -60,7 +60,7 @@ int main() {
                   object.data(), 0);
   glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 1, ssbo);
 
-  const unsigned int tw = 1024, th = 1024;
+  const unsigned int tw = 1024 / 1, th = 1024 / 1;
   unsigned int texture0;
   glGenTextures(1, &texture0);
   glActiveTexture(GL_TEXTURE0);
