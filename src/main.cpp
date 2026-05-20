@@ -6,6 +6,12 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+struct alignas(16) Object {
+  float radius;
+  alignas(16) glm::vec3 center;
+  alignas(16) glm::vec3 color;
+};
+
 const int width = 1066, height = 600;
 Camera camera(45.f, (float)width / height, 0.1f, 100.f,
               glm::vec3(0.f, 0.f, -1.f), glm::vec3(0.f, 0.f, 3.f));
@@ -14,6 +20,11 @@ void framebuffer_cb(GLFWwindow *window, int w, int h);
 void process_inp(GLFWwindow *window, double delta);
 void glfw_error_callback(int error, const char *description);
 void mouse_cb(GLFWwindow *window, double x, double y);
+std::vector<Object> object{
+    Object(0.5f, glm::vec3(-0.2f, 0.2f, -1.f), glm::vec3(1.f, 0.4f, 0.5f)),
+    Object(0.2f, glm::vec3(0.f, -0.5f, 2.f), glm::vec3(0.5f, 0.2f, 0.3f)),
+    Object(0.8f, glm::vec3(-1.f, 0.f, -4.f), glm::vec3(0.6f, 0.7f, 0.4f)),
+    Object(  -8.f, glm::vec3(0.f, 1.f, 1.f), glm::vec3(0.5f, 0.5f, 0.1f))};
 
 int main() {
   glfwSetErrorCallback(glfw_error_callback);
@@ -41,6 +52,13 @@ int main() {
 
   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   glfwSetCursorPosCallback(window, mouse_cb);
+
+  GLuint ssbo;
+  glGenBuffers(1, &ssbo);
+  glBindBuffer(GL_SHADER_STORAGE_BUFFER, ssbo);
+  glBufferStorage(GL_SHADER_STORAGE_BUFFER, object.size() * sizeof(Object),
+                  object.data(), 0);
+  glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 1, ssbo);
 
   const unsigned int tw = 1024, th = 1024;
   unsigned int texture0;
@@ -73,11 +91,12 @@ int main() {
          cam_right =
              glGetUniformLocation(shader_compute.program, "camera.right"),
          cam_fov = glGetUniformLocation(shader_compute.program, "camera.FOV"),
-         lightcol = glad_glGetUniformLocation(shader_compute.program,"dirlight.col");
+         lightcol =
+             glad_glGetUniformLocation(shader_compute.program, "dirlight.col");
   glUniform1f(cam_fov, camera.FOV / 2.f);
-  glUniform3f(light_dir, -0.3f, -0.5f, -1.f);
-  glUniform3f(lightcol,0.2f,0.3f,0.5f);
-  
+  glUniform3f(light_dir, -0.3f, -0.2f, -1.f);
+  glUniform3f(lightcol, 0.2f, 0.3f, 0.5f);
+
   glUseProgram(shader_std.program);
   GLuint text0 = glGetUniformLocation(shader_std.program, "text0");
   glUniform1i(text0, 0);
