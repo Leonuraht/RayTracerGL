@@ -1,5 +1,5 @@
 # RayTracerGL
-## [Images of execution of the src files:]
+## Images of execution of the src files:
 
 ![Execution Screenshot 1](images/Screenshot_20260906_185627.png)
 ![Execution Screenshot 2](images/Screenshot_20260906_185649.png)
